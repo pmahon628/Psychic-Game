@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--Steps to psychic game--->
+<!--1. Array for computer choices and user choices--> 
+<!--2. Ability for user to pick letter of alphabet--->
+<!--3. Computer picking a random # when you make a choice-->
+<!--4. When you pick a wrong number, shows how many choices you have left-->
+<!--5. Shows the guesses so far-->
+<!--6. When you pick a right number, adds to the wins column-->
+<!--7. When you get 5 wins, alert pops up with YT link that has celebration video-->
+<!--8. When you get to 5 losses, sad song YT link plays-->
+<!--9. --(decrement) for every time someone presses key (see #4)-->
+<!--10. onkeyup function, using alphabet-->
+
+</head>
+
+<div id="wrapper">
+
+
+<h1>The Psychic Game</h1>
+
+<h2>Can you guess what letter I am thinking of?</h2>
+
+<p id="Wins-text">Wins:</p>
+
+<p id="Losses-text">Losses:</p>
+
+<p id="Guesses-text">Guesses so far:</p>
+
+<p id="Guesses-left-text">Guesses Left:</p>
+
+</div>
+<body>
+
+        <script type="text/javascript">
+
+    
+       var yesGame = confirm ("Do you want to play a game?");
+       var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+       var guessesleft = 10;
+       var computerGuess = 0;
+       var userGuess; ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+       var wins = 0;
+       var losses = 0;
+       var lettersGuessed = 0;
+       var guessCount = 0;
+       var wrapperDiv = document.getElementById ("wrapper");
+
+       var WinsText = document.getElementById("Wins-text");
+       var LossesText = document.getElementById("Losses-text");
+       var guessesLeftText = document.getElementById("Guesss-Left-text");
+       var GuessesSoFarText =  document.getElementById ("Guesses-so-far-text");
+        
+       
+        if (yesGame){
+            alert("Great, let us play, it will be fun");
+            }
+       
+        else {
+           alert("That is a shame, you could have won $3,000,000!");
+            wrapperDiv.innerHTML="<h1>You missed out, bye!</h1>";
+       }
+
+
+    document.onkeyup = function(event) {
+    var userGuess = event.key;
+     console.log(userGuess);
+    }   
+
+    var computerGuess = alphabet[(Math.random() * alphabet.length)];
+    
+     if (userGuess == computerGuess){
+        wins++;
+     }
+    else {
+        guesses--;
+    }
+
+    if (guesses = 0){
+        losses++
+    };
+
+    WinsText.textcontent = "Wins: " + wins;
+    Lossestext.textcontent = "Losses: " + losses ;
+    GuessesleftText.textcontent = "Guesses-left: " + guessesLeft;
+    GuessesSoFarText.textcontent = "Guesses-so-far:" + GuessesSoFar;
+    
+        
+        debugger;
+
+  </script>
+
+</body>
+</html>
